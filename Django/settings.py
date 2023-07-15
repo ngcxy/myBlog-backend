@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-n_todee34%g_c=p@nr-!$#z$jgn!k((lo5muhwfwnmy#02ogeb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -70,12 +70,12 @@ WSGI_APPLICATION = 'Django.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'BlogApp',
-        'USER': 'root',
-        'PASSWORD': 'Cxy990916!'
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'BlogApp',
+    #     'USER': 'root',
+    #     'PASSWORD': 'Cxy990916!'
+    # }
 }
 
 
@@ -109,6 +109,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
