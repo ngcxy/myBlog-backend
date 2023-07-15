@@ -70,12 +70,14 @@ WSGI_APPLICATION = 'Django.wsgi.application'
 
 # Database
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'BlogApp',
-    #     'USER': 'root',
-    #     'PASSWORD': 'Cxy990916!'
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '0DFkmFglEbviQlwp',
+        'HOST': 'db.xihiuqinhcvbztckssuo.supabase.co',
+        'PORT': '5432'
+    }
 }
 
 
