@@ -128,9 +128,10 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000"
+# ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Custom user model
 AUTH_USER_MODEL = "users.NewUser"
