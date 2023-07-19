@@ -4,8 +4,8 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
-def upload_to(instance, filename):
-    return '../https://blog-image-ngcxy.s3.amazonaws.com/posts/{filename}'.format(filename=filename)
+def upload_to(filename):
+    return 'https://blog-image-ngcxy.s3.amazonaws.com/posts/{filename}'.format(filename=filename)
 
 
 class Category(models.Model):
@@ -32,7 +32,8 @@ class Post(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
-    image = models.ImageField(_("Image"), upload_to=upload_to, default='posts/default.PNG')
+    image = models.ImageField(upload_to=upload_to, default='posts/default.PNG')
+    # image = models.ImageField(null=False, blank=False)
     excerpt = models.TextField(null=True)
     content = models.TextField()
     slug = models.SlugField(max_length=250, unique_for_date='published')
