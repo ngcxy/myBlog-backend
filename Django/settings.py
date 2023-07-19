@@ -178,7 +178,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'static/media/'
-MEDIA_URL = 'https://blog-image-ngcxy.s3.us-west-1.amazonaws.com/'
+MEDIA_URL = 'https://blog-image-ngcxy.s3.amazonaws.com/'
 
 STORAGES = {
     "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
