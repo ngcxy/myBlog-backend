@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -175,7 +176,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'static/media/'
 MEDIA_URL = '/media/'
+
+STORAGES = {
+    "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
+    "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
+}
+AWS_QUERYSTRING_AUTH = False
+AWS_ACCESS_KEY_ID = 'AKIAQHOT3FMKTKSH7246'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
+
