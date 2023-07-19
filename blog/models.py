@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 def upload_to(instance, filename):
-    return 'posts/{filename}'.format(filename=filename)
+    return 'https://blog-image-ngcxy.s3.amazonaws.com/posts/{filename}'.format(filename=filename)
 
 
 class Category(models.Model):
