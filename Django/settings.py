@@ -176,8 +176,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-STATIC_ROOT = ''
-MEDIA_ROOT = ''
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_ROOT = BASE_DIR / 'photo'
 MEDIA_URL = 'https://blog-image-ngcxy.s3.amazonaws.com/'
 
 STORAGES = {
