@@ -182,7 +182,7 @@ MEDIA_URL = 'https://blog-image-ngcxy.s3.amazonaws.com/'
 
 STORAGES = {
     "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
-    # "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
+    "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
 }
 AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = 'AKIAQHOT3FMKTKSH7246'
