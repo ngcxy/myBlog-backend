@@ -2,7 +2,6 @@
 from pathlib import Path
 from datetime import timedelta
 import os
-import secretsmanager
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -189,7 +188,7 @@ STORAGES = {
 
 
 AWS_QUERYSTRING_AUTH = False
-AWS_ACCESS_KEY_ID = secretsmanager.response["AWS_ACCESS_KEY_ID"]
-AWS_SECRET_ACCESS_KEY = secretsmanager.response["AWS_SECRET_ACCESS_KEY"]
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
 

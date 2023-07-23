@@ -1,34 +1,37 @@
-import boto3
-from botocore.exceptions import ClientError
-global secrets
+import os
+from cryptography.fernet import Fernet
 
+# Generate a new encryption key (You should keep this key secure and not share it)
+encryption_key = Fernet.generate_key()
 
-class AWSSecretManager(object):
+# Encrypt the AWS access key and secret access key using the encryption key
+def encrypt_secret(secret):
+    f = Fernet(encryption_key)
+    encrypted_secret = f.encrypt(secret.encode())
+    return encrypted_secret
 
-    def __init__(self):
-        self._session = boto3.session.Session()
-        self.client = self._session.client(
-            service_name='secretsmanager',
-            region_name="us-east-1"
-        )
-        self.secrets = self.get()
+# Decrypt the encrypted secret using the encryption key
+def decrypt_secret(encrypted_secret):
+    f = Fernet(encryption_key)
+    decrypted_secret = f.decrypt(encrypted_secret).decode()
+    return decrypted_secret
 
-    def get(self):
-        try:
-            get_secret_value_response = self.client.get_secret_value(
-                SecretId="blog-app-image-s3"
-            )
+# Example usage:
+aws_access_key = "YOUR_AWS_ACCESS_KEY"
+aws_secret_key = "YOUR_AWS_SECRET_KEY"
 
-            if 'SecretString' in get_secret_value_response:
-                secret = get_secret_value_response['SecretString']
-                print(secret)
-                return secret
-        except ClientError as e:
-            # For a list of exceptions thrown, see
-            # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-            raise e
+# Encrypt the secrets before setting them as environment variables
+encrypted_access_key = encrypt_secret(aws_access_key)
+encrypted_secret_key = encrypt_secret(aws_secret_key)
 
-
-_instance = AWSSecretManager()
-response = _instance.get()
-print(response)
+# # Set the encrypted secrets as environment variables
+# os.environ["ENCRYPTED_AWS_ACCESS_KEY"] = encrypted_access_key
+# os.environ["ENCRYPTED_AWS_SECRET_KEY"] = encrypted_secret_key
+#
+# # Retrieve the encrypted secrets from environment variables
+# encrypted_access_key = os.environ.get("ENCRYPTED_AWS_ACCESS_KEY")
+# encrypted_secret_key = os.environ.get("ENCRYPTED_AWS_SECRET_KEY")
+#
+# # Decrypt the secrets before using them
+# decrypted_access_key = decrypt_secret(encrypted_access_key)
+# decrypted_secret_key = decrypt_secret(encrypted_secret_key)
