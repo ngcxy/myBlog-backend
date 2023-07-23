@@ -2,6 +2,8 @@
 from pathlib import Path
 from datetime import timedelta
 import os
+import secretsmanager
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -184,8 +186,10 @@ STORAGES = {
     "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
     "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
 }
+
+
 AWS_QUERYSTRING_AUTH = False
-AWS_ACCESS_KEY_ID = ''
-AWS_SECRET_ACCESS_KEY = ''
+AWS_ACCESS_KEY_ID = secretsmanager.response["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = secretsmanager.response["AWS_SECRET_ACCESS_KEY"]
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
 
