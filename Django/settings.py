@@ -185,7 +185,7 @@ STORAGES = {
     "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
 }
 AWS_QUERYSTRING_AUTH = False
-AWS_ACCESS_KEY_ID = 'AKIAQHOT3FMKTKSH7246'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
 
