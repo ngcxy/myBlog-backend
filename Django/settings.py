@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-n_todee34%g_c=p@nr-!$#z$jgn!k((lo5muhwfwnmy#02ogeb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', '.now.sh', 'my-blog-app-silk.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', '.now.sh', 'my-blog-backend-oi3ezz2kj-ngcxy.vercel.app']
 
 
 # Application definition
@@ -191,5 +191,4 @@ AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = smanager.access_key
 AWS_SECRET_ACCESS_KEY = smanager.secret_key
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
-AWS_DEFAULT_ACL = None
 
