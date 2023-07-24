@@ -176,17 +176,17 @@ SIMPLE_JWT = {
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'static/media'
+MEDIA_ROOT = BASE_DIR / 'static/photo'
 MEDIA_URL = 'https://blog-image-ngcxy.s3.amazonaws.com/'
-#
-# STORAGES = {
-#     "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
-#     "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
-# }
-#
-#
-# AWS_QUERYSTRING_AUTH = False
-# AWS_ACCESS_KEY_ID = smanager.access_key
-# AWS_SECRET_ACCESS_KEY = smanager.secret_key
-# AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
+
+STORAGES = {
+    "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
+    "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
+}
+
+
+AWS_QUERYSTRING_AUTH = False
+AWS_ACCESS_KEY_ID = smanager.access_key
+AWS_SECRET_ACCESS_KEY = smanager.secret_key
+AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
 
