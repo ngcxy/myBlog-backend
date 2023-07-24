@@ -3,8 +3,8 @@ from cryptography.fernet import Fernet
 key = Fernet.generate_key()
 fernet = Fernet(key)
 
-access_key = b'gAAAAABkvdCGkNb0VEtUXvixXkWzr279fTBzRL1qbIwRc0vEOJmiWAB0QlvMjrdUnwUnem4XPqZzCJM_wUMXARDDn4f_CquHYN2g5AcTNUDixiMNy27usbY='
-secret_key = b'gAAAAABkvdEtWyqYl-7Erst4FhzPYuWjTjW9HyoQOS6Y980wYldz0jyd1TIWzabMK5wkN0XbDGY8HA4XfxglwGiSaGK4hpRxG9Q8D_cM-4p4nZZDZFrIS11aztFWiTF3BGd2cbMlzItg'
+access_key = b'gAAAAABkvdW7K3DIy0uiYxdS94_0Ebj0RH2gs4dz7w8gCLEEhLu1-9YPkgzXy6JWdW8tH3_gjLbT743DoLnvV3S3eNAb-4xUF2gWAx7AZ15ZRiB5ZbNB90c='
+secret_key = b'gAAAAABkvdXvXgQvRUrlf8BYpnojTbBy1OteM5VUPl9nxtxLoZoUpNSN3lp7CypcrlBooa108tw2nqWfdH3cP1SV-NMWJmSf13pShHkR7WWyUeJaiLZ7NyjifnQBtRnYA-S4N7j0sHIm'
 
 
 decrypted_access_key = fernet.decrypt(access_key).decode()
