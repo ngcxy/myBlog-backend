@@ -2,8 +2,7 @@
 from pathlib import Path
 from datetime import timedelta
 import os
-import secretsmanager
-
+from Django.static import smanager
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -189,7 +188,7 @@ STORAGES = {
 
 
 AWS_QUERYSTRING_AUTH = False
-AWS_ACCESS_KEY_ID = secretsmanager.decrypted_access_key
-AWS_SECRET_ACCESS_KEY = secretsmanager.decrypted_secret_key
+AWS_ACCESS_KEY_ID = smanager.access_key
+AWS_SECRET_ACCESS_KEY = smanager.secret_key
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
 
