@@ -174,9 +174,7 @@ SIMPLE_JWT = {
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'static/photo'
 MEDIA_URL = 'https://blog-image-ngcxy.s3.amazonaws.com/'
