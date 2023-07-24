@@ -23,6 +23,6 @@
       "src": "/(.*)",
       "dest": "Django/wsgi.py"
     }
-  ],
+  ]
 
 }
