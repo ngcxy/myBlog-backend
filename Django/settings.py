@@ -191,4 +191,5 @@ AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = smanager.access_key
 AWS_SECRET_ACCESS_KEY = smanager.secret_key
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
+AWS_DEFAULT_ACL = None
 
