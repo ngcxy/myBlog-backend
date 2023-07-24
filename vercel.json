@@ -10,11 +10,11 @@
       "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles"
+        "distDir": "staticfiles_build"
       }
     }
   ],
-    "routes": [
+  "routes": [
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
