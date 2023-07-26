@@ -128,6 +128,7 @@ REST_FRAMEWORK = {
 #     "http://localhost:3000"
 # ]
 CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['https://my-blog-app-silk.vercel.app']
 
 # Custom user model
 AUTH_USER_MODEL = "users.NewUser"
