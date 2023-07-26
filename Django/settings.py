@@ -189,6 +189,6 @@ STORAGES = {
 AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = smanager.access_key
 AWS_SECRET_ACCESS_KEY = smanager.secret_key
-AWS_S3_REGION_NAME = 'us-east-1'
+AWS_S3_REGION_NAME = 'us-west-1'
 AWS_STORAGE_BUCKET_NAME = 'blog-image-ngcxy'
 
