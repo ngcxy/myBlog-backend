@@ -10,7 +10,7 @@ def upload_to(instance, filename):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    id = models.BigAutoField(primary_key=True)
+    # primary_key = True
 
     def __str__(self):
         return self.name
@@ -31,7 +31,7 @@ class Post(models.Model):
 
     # protect the category from being deleted
     category = models.ForeignKey(
-        Category, on_delete=models.PROTECT, default=1)
+        Category, on_delete=models.PROTECT, default=6)
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to=upload_to, default='posts/default.PNG')
     # image = models.ImageField(null=False, blank=False)
