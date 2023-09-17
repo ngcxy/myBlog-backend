@@ -29,8 +29,9 @@ class PostList(generics.ListAPIView):
 
 
 class PostDetail(generics.RetrieveAPIView):
-    serializer_class = PostSerializer
     permission_classes = [AllowAny]
+    serializer_class = PostSerializer
+
 
     def get_object(self, queryset=None, **kwargs):
         item = self.kwargs.get('pk')
